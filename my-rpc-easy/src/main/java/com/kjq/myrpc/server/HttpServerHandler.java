@@ -1,10 +1,12 @@
 package com.kjq.myrpc.server;
 
+import com.kjq.myrpc.RpcApplication;
 import com.kjq.myrpc.model.RpcRequest;
 import com.kjq.myrpc.model.RpcResponse;
 import com.kjq.myrpc.registry.LocalRegistry;
 import com.kjq.myrpc.serializer.JdkSerializer;
 import com.kjq.myrpc.serializer.Serializer;
+import com.kjq.myrpc.serializer.SerializerFactory;
 import io.vertx.core.Handler;
 import io.vertx.core.buffer.Buffer;
 import io.vertx.core.http.HttpServerRequest;
@@ -18,10 +20,12 @@ import java.lang.reflect.Method;
  */
 public class HttpServerHandler implements Handler<HttpServerRequest> {
 
+    final Serializer serializer = SerializerFactory.getInstance(RpcApplication.getRpcConfig().getSerializer());
+
     @Override
     public void handle(HttpServerRequest request) {
         // 指定序列化器
-        final Serializer serializer = new JdkSerializer();
+        // final Serializer serializer = new JdkSerializer();
 
         // 记录日志
         System.out.println("Received request: " + request.method() + " " + request.uri());

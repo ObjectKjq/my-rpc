@@ -1,0 +1,3 @@
+jdk=com.kjq.myrpc.serializer.JdkSerializer
+hessian=com.kjq.myrpc.serializer.HessianSerializer
+json=com.kjq.myrpc.serializer.JsonSerializer

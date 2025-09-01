@@ -1,0 +1,1 @@
+kryo=com.kjq.example.consumer.serializer.KryoSerializer
