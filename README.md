@@ -1,6 +1,19 @@
 ## 手写RPC框架
 
+### 目录介绍
+
+
+
 ### etcd注册中心
+
+- 数据存储
+- 服务注册
+- 服务发现
+- 心跳检测和续期机制
+- 服务注销
+- 服务下线
+- 消费端缓存
+
 ```shell
 docker pull bitnami/etcd:3.6.4
 # docker run --name etcd-server -p 2379:2379 -p 2380:2380 -e ETCD_ROOT_PASSWORD=kjq -d bitnami/etcd:3.6.4
